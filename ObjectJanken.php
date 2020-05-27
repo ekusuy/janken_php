@@ -1,6 +1,8 @@
 <?php
 require_once "./Player.php";
 require_once "./Judge.php";
+require_once "./Tactics.php";
+require_once "./RandomTactics.php";
 
 class ObjectJanken
 {
