@@ -2,9 +2,9 @@
 
 class SimpleJanken
 {
-  public static $STONE = 0;
-  public static $SCISSORS = 1;
-  public static $PAPER = 2;
+  private const STONE = 0;
+  private const SCISSORS = 1;
+  private const PAPER = 2;
 
   public function janken()
   {
@@ -16,19 +16,19 @@ class SimpleJanken
       if ($randomNum <= 1) {
 
         // randomNumが0以上１未満の場合グー
-        $player1Hand = self::$STONE;
+        $player1Hand = self::STONE;
 
         echo "グー";
       } elseif ($randomNum <= 2) {
 
         // randomNumが1以上2未満の場合チョキ
-        $player1Hand = self::$SCISSORS;
+        $player1Hand = self::SCISSORS;
 
         echo "チョキ";
       } elseif ($randomNum <= 3) {
 
         // randomNumが2以上3未満の場合パー
-        $player1Hand = self::$PAPER;
+        $player1Hand = self::PAPER;
 
         echo "パー";
       }
@@ -39,19 +39,19 @@ class SimpleJanken
       if ($randomNum <= 1) {
 
         // randomNumが0以上１未満の場合グー
-        $player2Hand = self::$STONE;
+        $player2Hand = self::STONE;
 
         echo "グー";
       } elseif ($randomNum <= 2) {
 
         // randomNumが1以上2未満の場合チョキ
-        $player2Hand = self::$SCISSORS;
+        $player2Hand = self::SCISSORS;
 
         echo "チョキ";
       } elseif ($randomNum <= 3) {
 
         // randomNumが2以上3未満の場合パー
-        $player2Hand = self::$PAPER;
+        $player2Hand = self::PAPER;
 
         echo "パー";
       }
@@ -61,18 +61,18 @@ class SimpleJanken
 
 
       if (
-        $player1Hand == self::$STONE && $player2Hand == self::$SCISSORS ||
-        $player1Hand == self::$SCISSORS && $player2Hand == self::$PAPER ||
-        $player1Hand == self::$PAPER && $player2Hand == self::$STONE
+        $player1Hand == self::STONE && $player2Hand == self::SCISSORS ||
+        $player1Hand == self::SCISSORS && $player2Hand == self::PAPER ||
+        $player1Hand == self::PAPER && $player2Hand == self::STONE
       ) {
         //プレイヤー１の勝ち回数を加算
         $player1WinCount++;
 
         echo "player1の勝ち" . "\n";
       } elseif (
-        $player1Hand == self::$STONE && $player2Hand == self::$PAPER ||
-        $player1Hand == self::$SCISSORS && $player2Hand == self::$STONE ||
-        $player1Hand == self::$PAPER && $player2Hand == self::$SCISSORS
+        $player1Hand == self::STONE && $player2Hand == self::PAPER ||
+        $player1Hand == self::SCISSORS && $player2Hand == self::STONE ||
+        $player1Hand == self::PAPER && $player2Hand == self::SCISSORS
       ) {
         //プレイヤー１の勝ち回数を加算
         $player2WinCount++;
