@@ -12,6 +12,12 @@ class ObjectJanken
     $murata = new Player("村田");
     $yamada = new Player("山田");
 
+    $murataTactics = new RandomTactics();
+    $murata->setTactics($murataTactics);
+
+    $yamadaTactics = new RandomTactics();
+    $yamada->setTactics($yamadaTactics);
+
     $judge->startJanken($murata, $yamada);
   }
 
