@@ -2,9 +2,9 @@
 
 class SimpleJanken
 {
-  private const STONE = 0;
+  private const STONE    = 0;
   private const SCISSORS = 1;
-  private const PAPER = 2;
+  private const PAPER    = 2;
 
   public function janken()
   {
