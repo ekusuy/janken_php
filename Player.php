@@ -13,29 +13,34 @@ class Player
   //プレイヤーの買った回数
   private $winCount = 0;
 
+  private $tactics;
+
   //コンストラクタ
   public function __construct($name)
   {
     $this->name = $name;
   }
 
-  //手を出す
+
+  /**
+   * プレイヤーに戦略を渡す
+   *
+   * @param Tactics $tactics
+   * @return void
+   */
+  public function setTactics(Tactics $tactics)
+  {
+    $this->tactics = $tactics;
+  }
+
+  /**
+   * ジャンケンの手を出す
+   *
+   * @return ジャンケンの手
+   */
   public function showHand(): int
   {
-    $randomNum = rand(1, 3);
-    if ($randomNum <= 1) {
-      // randomNumが１の場合グー
-      return self::STONE;
-    }
-    if ($randomNum <= 2) {
-      // randomNumが2の場合チョキ
-      return self::SCISSORS;
-    }
-    if ($randomNum <= 3) {
-      // randomNumが3の場合パー
-      return self::PAPER;
-    }
-    return 0;
+    return $this->tactics->readTactics();
   }
 
   // 勝敗
