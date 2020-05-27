@@ -3,9 +3,9 @@
 class Player
 {
   // じゃんけんの手を表す定数
-  private const STONE    = 0;
-  private const SCISSORS = 1;
-  private const PAPER    = 2;
+  const STONE    = 0;
+  const SCISSORS = 1;
+  const PAPER    = 2;
 
   //プレイヤークラスの属性
   private $name;
@@ -22,28 +22,26 @@ class Player
   //手を出す
   public function showHand(): int
   {
-    $hand = 0;
-    $randomNum = rand(0, 3);
+    $randomNum = rand(1, 3);
     if ($randomNum <= 1) {
-      // randomNumが0以上１未満の場合グー
-      $hand = self::STONE;
-    } elseif ($randomNum <= 2) {
-
-      // randomNumが1以上2未満の場合チョキ
-      $hand = self::SCISSORS;
-    } elseif ($randomNum <= 3) {
-      // randomNumが2以上3未満の場合パー
-      $hand = self::PAPER;
+      // randomNumが１の場合グー
+      return self::STONE;
     }
-    return $hand;
+    if ($randomNum <= 2) {
+      // randomNumが2の場合チョキ
+      return self::SCISSORS;
+    }
+    if ($randomNum <= 3) {
+      // randomNumが3の場合パー
+      return self::PAPER;
+    }
+    return 0;
   }
 
   // 勝敗
-  public function notifyResult(bool $result): void
+  public function notifyResult(): void
   {
-    if ($result) {
-      $this->winCount += 1;
-    }
+    $this->winCount += 1;
   }
 
   // 自分の勝った回数を答える
