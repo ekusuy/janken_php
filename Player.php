@@ -13,6 +13,12 @@ class Player
   //プレイヤーの買った回数
   private $winCount = 0;
 
+  //コンストラクタ
+  public function __construct($name)
+  {
+    $this->name = $name;
+  }
+
   //手を出す
   public function showHand(): int
   {
@@ -44,5 +50,10 @@ class Player
   public function getWinCount(): int
   {
     return $this->winCount;
+  }
+
+  public function getName(): string
+  {
+    return $this->name;
   }
 }
