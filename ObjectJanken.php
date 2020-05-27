@@ -12,7 +12,17 @@ class ObjectJanken
 
     $judge->startJanken($murata, $yamada);
   }
+
+  public function OnlyJanken()
+  {
+    $judge = new Judge();
+    $murata = new Murata("村田");
+    $yamada = new Yamada("山田");
+
+    $judge->startJanken($murata, $yamada);
+  }
 }
 
 $janken = new  ObjectJanken();
 $janken->Janken();
+$janken->OnlyJanken();
