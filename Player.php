@@ -55,3 +55,22 @@ class Player
     return $this->name;
   }
 }
+
+//継承の練習として以下を定義
+class Murata extends Player
+{
+  //グーのみ出す
+  public function showHand(): int
+  {
+    return self::STONE;
+  }
+}
+
+class Yamada extends Player
+{
+  //パーのみ出す
+  public function showHand(): int
+  {
+    return self::PAPER;
+  }
+}
